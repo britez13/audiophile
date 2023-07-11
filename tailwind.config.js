@@ -5,9 +5,6 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-      extend: {
-        // backgroundImage: "url(/assets/)"
-      },
       fontFamily: {
         'manrope': ['"Manrope"', 'sans-serif'],
       },
@@ -16,7 +13,7 @@ export default {
         'white': "#FFFFFF",
         'pinkish': '#FBAF85',
         'orangish': '#D87D4A',
-        'blackish': '#101010',
+        'blackish': '#191919',
         'greyish': '#F1F1F1',
         'light-greyish': '#FAFAFA'
       }

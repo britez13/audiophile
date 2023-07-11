@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import CategoriesList from '../components/CategoriesList.vue';
+import Hero from '../components/Hero.vue';
 </script>
 
 <template>
-    <section class="">
-        
-    </section>
+    <main>
+       <Hero />
+       <CategoriesList />
+       
+    </main>
 </template>
