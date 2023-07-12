@@ -8,8 +8,33 @@
     }
 }
 
+
 @layer utilities {
     .container {
-        @apply px-4 md:px-6 lg:px-8 mx-auto w-[90%] max-w-[1440px]
+        @apply mx-auto w-[90%] max-w-[1100px]
+    }
+}
+
+@layer utilities {
+    .btn {
+        @apply uppercase text-[13px] tracking-[1px] py-3 px-5
+    }
+}
+
+@layer utilities {
+    .title {
+        @apply uppercase text-center font-bold
+    }
+}
+
+@layer utilities {
+    .description {
+        @apply text-[15px] font-medium leading-6 opacity-75 text-center;
+    }
+}
+
+@layer utilities {
+    .spacing-wide {
+        @apply text-sm uppercase tracking-[10px] opacity-50 text-center;
     }
 }

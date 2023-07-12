@@ -31,8 +31,11 @@ const categories = [
           alt=""
         />
         <div class="flex flex-col gap-2 text-center mb-2">
-          <h3>{{ category.name }}</h3>
-          <span>Shop</span>
+          <h3 class="title text-[15px] tracking-[1.071px]">{{ category.name }}</h3>
+          <div class="flex justify-center items-center gap-2">
+          <span class="title text-[13px] tracking-[1px] opacity-50">Shop</span>
+            <img class="w-[6px] h-[11px] object-cover" src="../assets/shared/desktop/icon-arrow-right.svg" alt="">
+          </div>
         </div>
       </li>
     </ul>
