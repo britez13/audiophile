@@ -17,7 +17,7 @@
 
 @layer utilities {
     .btn {
-        @apply uppercase text-[13px] tracking-[1px] py-3 px-5
+        @apply uppercase font-bold text-[13px] tracking-[1px] py-3 px-5
     }
 }
 

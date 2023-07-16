@@ -19,14 +19,16 @@ const categories = [
 </script>
 
 <template>
-  <section class="container mt-14">
+  <section class="container mt-16 md:mt-24">
     <ul class="flex flex-col gap-10 md:flex-row md:gap-4">
       <li
-        class="bg-greyish rounded-lg flex justify-center items-end relative min-h-[120px] md:grow"
+        class="bg-greyish rounded-lg flex justify-center items-end relative min-h-[120px] 
+        md:grow md:min-h-[165px] md:pb-4"
         v-for="category of categories"
       >
         <img
-          class="w-[110px] h-[110px] object-cover absolute left-1/2 -top-1/3 -translate-x-1/2 -translate-y1/2"
+          class="w-[110px] h-[110px] object-cover absolute left-1/2 -top-1/3 -translate-x-1/2 -translate-y1/2 
+          md:w-[133px] md:h-[133px]"
           :src="category.img"
           alt=""
         />
