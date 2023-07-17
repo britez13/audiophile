@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CategoriesList from '../components/CategoriesList.vue';
+import CategoriesMenu from '../components/CategoriesMenu.vue';
 import Hero from '../components/Hero.vue';
 import HomeProducts from '../components/HomeProducts.vue';
 </script>
@@ -7,7 +7,7 @@ import HomeProducts from '../components/HomeProducts.vue';
 <template>
     <main>
        <Hero />
-       <CategoriesList />
+       <CategoriesMenu />
        <HomeProducts /> 
     </main>
 </template>

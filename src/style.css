@@ -34,7 +34,7 @@
 }
 
 @layer utilities {
-    .spacing-wide {
+    .wide {
         @apply text-sm uppercase tracking-[10px] opacity-50 text-center;
     }
 }

@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import CategoriesList from '../components/CategoriesList.vue';
+
 </script>
 
 <template>
-    <h1>Category</h1>
+    <CategoriesList />
 </template>

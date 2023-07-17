@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import Category from "../pages/Category.vue";
 import ProductDetail from "../pages/ProductDetail.vue";
 import Checkout from "../pages/Checkout.vue";
+import NotFound from "../pages/404.vue";
 
 const routes = [
   {
@@ -16,7 +17,7 @@ const routes = [
     component: Category,
   },
   {
-    path: "/product-detail",
+    path: "/products/:product",
     name: "ProductDetail",
     component: ProductDetail,
   },
@@ -24,6 +25,11 @@ const routes = [
     path: "/checkout",
     name: "Checkout",
     component: Checkout,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
