@@ -20,7 +20,7 @@ const categories = [
 
 <template>
   <section class="container mt-16 md:mt-24">
-    <ul class="flex flex-col gap-10 md:flex-row md:gap-4">
+    <ul class="flex flex-col gap-16 md:flex-row md:gap-4">
       <li
         class="bg-greyish rounded-lg flex justify-center items-end relative min-h-[120px] 
         md:grow md:min-h-[165px] md:pb-4"

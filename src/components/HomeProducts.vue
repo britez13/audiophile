@@ -11,13 +11,9 @@
       <picture>
         <source srcset="../assets/home/desktop/image-speaker-zx9.png" media="(min-width: 1000px)" />
         <source srcset="../assets/home/tablet/image-speaker-zx9.png" media="(min-width: 600px)" />
-        <img class="object-cover rounded-lg lg:max-w-[410px] lg:relative -bottom-28" src="../assets/home/mobile/image-speaker-zx9.png" alt="Earphone" />
+        <img class="object-cover max-w-[172px] rounded-lg lg:max-w-[410px] lg:relative -lg:bottom-28" src="../assets/home/mobile/image-speaker-zx9.png" alt="Earphone" />
       </picture>
-      <!-- <img
-        class="w-[172px] h-[200px] object-cover md:w-[197px] md:h-[237px]"
-        src="../assets/home/mobile/image-speaker-zx9.png"
-        alt="Speaker zx9"
-      /> -->
+      
       <div class="flex flex-col gap-4 items-center md:max-w-[349px] md:gap-8 lg:items-start">
         <h3
           class="title text-white text-[36px] tracking-[1.2px] leading-[40px] md:text-[56px] md:leading-[58px]

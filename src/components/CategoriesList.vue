@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { ref } from 'vue'
     import { useRoute, useRouter } from 'vue-router';
+    import CategoriesMenu from './CategoriesMenu.vue'
     import data from '../data.json'
 
     const router = useRouter()
@@ -16,19 +17,21 @@
 
 
 <template>
-    <section class="bg-blackish py-4">
+    <div class="bg-blackish py-4">
             <h1 class="title text-white text-[28px] tracking-[2px]">{{ title }}</h1>
-        </section>
+    </div>
     <main class="container">
-        <ul class="mt-8 flex flex-col gap-20" v-if="filteredProductsByCategory.length">
-             <li v-for="product of filteredProductsByCategory">
-                <div class="flex flex-col gap-4">
+        <ul class="mt-8 flex flex-col gap-24 mb-28" v-if="filteredProductsByCategory.length">
+            <li class="category" v-for="product of filteredProductsByCategory">
+                <div class="flex flex-col gap-6 lg:grid lg:grid-cols-2">
                     <picture>
                         <source :srcset="product.image.desktop" media="(min-width: 1000px)" />
-                        <source :srcset="product.image.desktop" media="(min-width: 600px)" />
-                        <img class="object-cover rounded-lg" :src="product.image.mobile" :alt="product.name" />
+                        <source :srcset="product.image.tablet" media="(min-width: 600px)" />
+                        <img class="bg-greyish object-cover rounded-lg md:max-h-[352px] md:w-full 
+                        md:object-cover lg:max-h-[560px]" 
+                        :src="product.image.mobile" :alt="product.name" />
                     </picture>
-                    <div class="flex flex-col justify-center items-center gap-4">
+                    <div class="flex flex-col justify-center items-center gap-6">
                         <h3 class="wide text-orangish opacity-1" v-if="product.new">New Product</h3>
                         <h2 class="title text-[28px] tracking-[1px]"> {{ product.name }} </h2>
                         <p class="description">{{ product.description }}</p>
@@ -39,6 +42,7 @@
                 </div>
             </li>
         </ul>
-        <h2 v-else>Something went wrong.</h2>
+        <CategoriesMenu />
+        <!-- <h2 v-else>Something went wrong.</h2> -->
     </main>
 </template>
