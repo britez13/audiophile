@@ -3,19 +3,19 @@ const categories = [
   {
     id: 1,
     name: "Headphones",
-    route: "/categories/headphones",
+    route: "/headphones",
     img: "/src/assets/shared/desktop/image-category-thumbnail-headphones.png",
   },
   {
     id: 2,
     name: "Speakers",
-    route: "/categories/speakers",
+    route: "/speakers",
     img: "/src/assets/shared/desktop/image-category-thumbnail-speakers.png",
   },
   {
     id: 3,
     name: "Earphones",
-    route: "/categories/headphones",
+    route: "/headphones",
     img: "/src/assets/shared/desktop/image-category-thumbnail-earphones.png",
   },
 ];

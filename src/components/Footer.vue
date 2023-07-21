@@ -5,15 +5,15 @@ const pages = [
     name: "home",
   },
   {
-    path: "/categories/headphones",
+    path: "/headphones",
     name: "headphones",
   },
   {
-    path: "/categories/speakers",
+    path: "/speakers",
     name: "speakers",
   },
   {
-    path: "/categories/earphones",
+    path: "/earphones",
     name: "earphones",
   },
 ];

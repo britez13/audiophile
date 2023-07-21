@@ -12,12 +12,12 @@ const routes = [
     component: Home,
   },
   {
-    path: "/categories/:category",
+    path: "/:category",
     name: "Category",
     component: Category,
   },
   {
-    path: "/products/:product",
+    path: "/:category/:product",
     name: "ProductDetail",
     component: ProductDetail,
   },
@@ -36,6 +36,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
+  scrollBehavior(to, from, savedPostion) {
+    return {
+      top: 0
+    }
+  }
 });
 
 export default router;

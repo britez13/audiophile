@@ -1,25 +1,41 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { ref, computed } from "vue";
+import { useRoute, useRouter, onBeforeRouteUpdate } from "vue-router";
 import CategoriesMenu from "./CategoriesMenu.vue";
 import data from "../data.json";
 
 const router = useRouter();
-const routeName = useRoute().path.split("/")[2];
+const currentRoute = useRoute().path.split("/")[1];
+console.log("this run");
+
+const routeName = ref(currentRoute);
 const categories = ["headphones", "speakers", "earphones"];
-const routeIsValid = categories.find((category) => category === routeName);
+const routeIsValid = categories.find((category) => category === routeName.value);
 if (!routeIsValid) {
   router.push({ name: "NotFound" });
 }
-const title = ref(routeName);
-const filteredProductsByCategory = data.filter(
-  (item) => item.category === routeName
+
+const filteredProductsByCategory = computed(() => {
+  return data.filter(
+  (item) => item.category === routeName.value
 );
+})
+
+onBeforeRouteUpdate((to, _from) => {
+  console.log("to", to);
+  // console.log("from", from);
+  // console.log("currentRoute", currentRoute);
+  
+  routeName.value = to.params.category
+  
+  console.log(routeName.value);
+})
+
 </script>
 
 <template>
   <div class="bg-blackish py-12">
-    <h1 class="title text-white text-[28px] tracking-[2px]">{{ title }}</h1>
+    <h1 class="title text-white text-[28px] tracking-[2px]">{{ routeName }}</h1>
   </div>
   <main class="container">
     <ul
@@ -53,7 +69,7 @@ const filteredProductsByCategory = data.filter(
             <p class="description md:px-12 lg:px-0 lg:text-left">
               {{ product.description }}
             </p>
-            <router-link :to="`/products/${product.slug}`">
+            <router-link :to="`/${product.category}/${product.slug}`">
               <button
                 class="btn bg-orangish text-white hover:bg-light-orangish transition-colors"
               >

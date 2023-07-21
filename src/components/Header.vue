@@ -5,15 +5,15 @@ const pages = [
     name: "home",
   },
   {
-    path: "/categories/headphones",
+    path: "/headphones",
     name: "headphones",
   },
   {
-    path: "/categories/speakers",
+    path: "/speakers",
     name: "speakers",
   },
   {
-    path: "/categories/earphones",
+    path: "/earphones",
     name: "earphones",
   },
 ];
@@ -32,14 +32,14 @@ const pages = [
 
       <nav class="hidden lg:flex lg:items-center">
         <ul class="flex flex-col gap-6 md:flex-row">
+          <router-link :to="page.path" v-for="page in pages">
           <li
             class="title text-white text-[13px] tracking-[2px] font-manrope md:text-left hover:text-orangish
             transition-colors"
-            
-            v-for="page in pages"
           >
-            <router-link :to="page.path">{{ page.name }}</router-link>
+            {{ page.name }}
           </li>
+        </router-link>
         </ul>
       </nav>
       <img
