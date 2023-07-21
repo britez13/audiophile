@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 import data from "../data.json";
 
+const currentNumber = ref(1);
 const router = useRouter();
 const routeName = ref(useRoute().path.split("/")[2]);
 
@@ -15,24 +16,26 @@ const products = [
   "zx9-speaker",
 ];
 
-const routeIsValid = products.find((filteredProduct) => filteredProduct === routeName.value);
+const routeIsValid = products.find(
+  (filteredProduct) => filteredProduct === routeName.value
+);
 if (!routeIsValid) {
   router.push({ name: "NotFound" });
 }
-const filteredProduct = computed( () => (data.find((item) => item.slug === routeName.value)));
+const filteredProduct = computed(() =>
+  data.find((item) => item.slug === routeName.value)
+);
 
-onBeforeRouteUpdate((to, from) => {  
-  if(to.fullPath !== from.fullPath) {
+onBeforeRouteUpdate((to, from) => {
+  if (to.fullPath !== from.fullPath) {
     //@ts-ignore
-    routeName.value = to.params.product
-  } 
-})
-
+    routeName.value = to.params.product;
+  }
+});
 </script>
 
 <template>
   <main v-if="filteredProduct" class="container">
-    <h2>{{ routeName }}</h2>
     <button
       class="mt-4"
       @click="
@@ -47,8 +50,14 @@ onBeforeRouteUpdate((to, from) => {
     <section class="mt-6">
       <div class="md:grid grid-cols-2 gap-8 lg:gap-12">
         <picture>
-          <source :srcset="filteredProduct.image.desktop" media="(min-width: 1000px)" />
-          <source :srcset="filteredProduct.image.desktop" media="(min-width: 600px)" />
+          <source
+            :srcset="filteredProduct.image.desktop"
+            media="(min-width: 1000px)"
+          />
+          <source
+            :srcset="filteredProduct.image.desktop"
+            media="(min-width: 600px)"
+          />
           <img
             class="object-cover rounded-lg"
             :src="filteredProduct.image.mobile"
@@ -68,7 +77,11 @@ onBeforeRouteUpdate((to, from) => {
             >$ {{ filteredProduct.price }}</span
           >
           <div class="flex gap-2">
-            <input class="bg-greyish" type="number" />
+            <div class="bg-greyish px-4 flex justify-evenly items-center gap-8 w-[100px]">
+              <button @click="currentNumber > 1 ? currentNumber-- : currentNumber ">-</button>
+              <span>{{ currentNumber }}</span
+              ><button @click="currentNumber++">+</button>
+            </div>
             <button
               class="btn bg-orangish text-white hover:bg-light-orangish transition-colors"
             >
@@ -85,7 +98,9 @@ onBeforeRouteUpdate((to, from) => {
           >
             Features
           </h2>
-          <p class="description-left mt-4 lg:pr-12">{{ filteredProduct.features }}</p>
+          <p class="description-left mt-4 lg:pr-12">
+            {{ filteredProduct.features }}
+          </p>
         </div>
         <div class="md:grid md:grid-cols-2 md:mt-12 lg:grid-cols-1 lg:mt-0">
           <h2
@@ -94,7 +109,10 @@ onBeforeRouteUpdate((to, from) => {
             In the box
           </h2>
           <ul class="mt-6 flex flex-col gap-2 md:mt-0">
-            <li class="block" v-for="characteristic of filteredProduct.includes">
+            <li
+              class="block"
+              v-for="characteristic of filteredProduct.includes"
+            >
               <p class="text-[15px] font-bold text-orangish">
                 {{ characteristic.quantity }}x
                 <span class="ml-3 description-left text-black">{{
