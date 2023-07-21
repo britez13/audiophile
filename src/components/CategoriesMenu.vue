@@ -15,7 +15,7 @@ const categories = [
   {
     id: 3,
     name: "Earphones",
-    route: "/headphones",
+    route: "/earphones",
     img: "/src/assets/shared/desktop/image-category-thumbnail-earphones.png",
   },
 ];

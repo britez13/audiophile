@@ -6,7 +6,6 @@ import data from "../data.json";
 
 const router = useRouter();
 const currentRoute = useRoute().path.split("/")[1];
-console.log("this run");
 
 const routeName = ref(currentRoute);
 const categories = ["headphones", "speakers", "earphones"];
@@ -21,14 +20,11 @@ const filteredProductsByCategory = computed(() => {
 );
 })
 
-onBeforeRouteUpdate((to, _from) => {
-  console.log("to", to);
-  // console.log("from", from);
-  // console.log("currentRoute", currentRoute);
-  
-  routeName.value = to.params.category
-  
-  console.log(routeName.value);
+onBeforeRouteUpdate((to, from) => {
+  if(to.fullPath !== from.fullPath) {
+    //@ts-ignore
+    routeName.value = to.params.category
+  } 
 })
 
 </script>
