@@ -24,7 +24,7 @@ const getShortenedName = (name: string) => {
         <div class="flex gap-2">
           <img
             class="w-[64px] h-[64px] object-cover rounded-lg"
-            :src="product.image.mobile"
+            :src="product.img"
             :alt="product.name"
           />
           <div class="flex flex-col justify-evenly">
@@ -47,8 +47,8 @@ const getShortenedName = (name: string) => {
       <h3>Total</h3>
       <span>{{ storeCart.totalPrice }}</span>
     </div>
-    <router-link to="/checkout">
-      <button class="btn bg-orangish text-white w-full">Checkout</button>
+    <router-link class="btn bg-orangish text-white w-full" to="/checkout">
+      Checkout
     </router-link>
   </div>
 </template>

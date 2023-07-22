@@ -34,13 +34,10 @@
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <router-link to="/products/zx9-speaker">
-        <button
-          class="btn bg-black text-white hover:bg-light-black transition-colors"
-        >
+        <router-link class="btn bg-black text-white hover:bg-light-black transition-colors" 
+        to="/products/zx9-speaker">
           See Product 
-        </button>
-      </router-link>
+        </router-link>
       </div>
     </div>
     <!-- Product image -->
@@ -48,12 +45,9 @@
       class="container mt-6 flex flex-col px-4 justify-center gap-8 items-start rounded-xl min-h-[320px] bg-[url('/src/assets/home/mobile/image-speaker-zx7.jpg')] bg-cover bg-right bg-no-repeat md:px-14 md:bg-[url('/src/assets/home/tablet/image-speaker-zx7.jpg')] lg:bg-[url('/src/assets/home/desktop/image-speaker-zx7.jpg')]"
     >
       <h3 class="title text-black text-[28px]">ZX7 Speaker</h3>
-      <router-link to="/products/zx7-speaker">
-      <button
-        class="btn border font-bold border-black text-black hover:bg-black hover:text-white transition-colors"
-      >
+      <router-link class="btn border font-bold border-black text-black hover:bg-black hover:text-white 
+      transition-colors" to="/products/zx7-speaker">
       See Product
-      </button>
     </router-link>
     </div>
     <!-- Product image divided -->
@@ -79,12 +73,9 @@
         <h3 class="title text-black text-[28px] tracking-[2px]">
           YX1 Earphones
         </h3>
-        <router-link to="/products/yx1-earphones">
-        <button
-          class="btn border font-bold border-black text-black hover:bg-black hover:text-white transition-colors"
-        >
+        <router-link class="btn border font-bold border-black text-black hover:bg-black hover:text-white 
+        transition-colors" to="/products/yx1-earphones">
           See Product
-        </button>
         </router-link>
       </div>
     </div>

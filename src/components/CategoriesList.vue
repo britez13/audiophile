@@ -65,12 +65,9 @@ onBeforeRouteUpdate((to, from) => {
             <p class="description md:px-12 lg:px-0 lg:text-left">
               {{ product.description }}
             </p>
-            <router-link :to="`/${product.category}/${product.slug}`">
-              <button
-                class="btn bg-orangish text-white hover:bg-light-orangish transition-colors"
-              >
+            <router-link class="btn bg-orangish text-white hover:bg-light-orangish transition-colors" 
+            :to="`/${product.category}/${product.slug}`">
                 See Product
-              </button>
             </router-link>
           </div>
         </div>

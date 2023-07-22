@@ -19,12 +19,9 @@
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <router-link to="/products/xx99-mark-two-headphones">
-        <button
-          class="btn bg-orangish text-white hover:bg-light-orangish transition-colors"
-        >
+        <router-link class="btn bg-orangish text-white hover:bg-light-orangish transition-colors" 
+        to="/products/xx99-mark-two-headphones">
           See Product
-        </button>
       </router-link>
       </div>
     </div>

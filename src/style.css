@@ -8,6 +8,24 @@
     }
 }
 
+@layer base {
+    legend {
+        @apply uppercase text-[13px] text-orangish tracking-[0.92px] font-bold mb-2
+    }
+}
+
+@layer utilities {
+    label {
+        @apply  text-[12px] text-black -tracking-[0.214px] font-bold
+    }
+}
+
+@layer base {
+    input {
+        @apply border border-greyish block rounded-lg w-full py-2 px-4 text-sm mb-2 focus:outline-orangish mt-2
+    }
+} 
+
 
 @layer utilities {
     .container {
@@ -27,11 +45,6 @@
     }
 }
 
-@layer utilities {
-    .title {
-        @apply uppercase text-center font-bold
-    }
-}
 
 @layer utilities {
     .title-left {
@@ -56,6 +69,8 @@
         @apply text-sm uppercase tracking-[10px] opacity-50 text-center;
     }
 }
+
+
 
 .category:nth-of-type(even) div div {
     grid-row: 1 / 2;

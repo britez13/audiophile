@@ -57,11 +57,11 @@ const pages = [
           src="../assets/shared/desktop/icon-cart.svg"
           alt=""
         />
-        <span
+        <div
           class="absolute bg-orangish w-4 h-4 border border-orangish rounded-full top-0 right-0 
-          translate-x-2 -translate-y-2 text-white text-[12px] grid place-content-center text-center 
+          translate-x-2 -translate-y-2 text-white text-[11px] grid place-content-center text-center 
           font-bold"
-          >{{ storeCart.length }}</span
+          ><span>{{ storeCart.length }}</span></div
         >
       </div>
     </div>
