@@ -2,6 +2,9 @@
 import { ref, computed } from "vue";
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 import data from "../data.json";
+import { useCartStore } from "../store/cart";
+
+const store = useCartStore()
 
 const currentNumber = ref(1);
 const router = useRouter();
@@ -26,10 +29,16 @@ const filteredProduct = computed(() =>
   data.find((item) => item.slug === routeName.value)
 );
 
+function addProcuctToCart(product: IProduct) {
+  store.addProduct(product, currentNumber.value)
+  currentNumber.value = 1
+}
+
 onBeforeRouteUpdate((to, from) => {
   if (to.fullPath !== from.fullPath) {
     //@ts-ignore
     routeName.value = to.params.product;
+    currentNumber.value = 1;
   }
 });
 </script>
@@ -84,6 +93,7 @@ onBeforeRouteUpdate((to, from) => {
             </div>
             <button
               class="btn bg-orangish text-white hover:bg-light-orangish transition-colors"
+              @click="() => addProcuctToCart(filteredProduct)"
             >
               Add to cart
             </button>
@@ -168,3 +178,4 @@ onBeforeRouteUpdate((to, from) => {
     </section>
   </main>
 </template>
+../store/cart
