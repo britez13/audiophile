@@ -35,7 +35,9 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="bg-blackish mt-20 py-8">
+  <footer class="relative bg-blackish mt-20 py-8 after:w-[101px] z-20  after:absolute 
+  after:h-1 after:rounded-lg after:bg-orangish after:top-0 after:left-1/2 after:-translate-x-1/2
+  md:after:left-[6%] md:after:translate-x-0 lg:after:left-[9.5%]">
     <div class="container flex flex-col gap-8 justify-center items-center md:items-start">
       <router-link to="/">
       <img
