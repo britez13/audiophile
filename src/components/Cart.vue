@@ -47,7 +47,7 @@ const getShortenedName = (name: string) => {
       <h3>Total</h3>
       <span>{{ storeCart.totalPrice }}</span>
     </div>
-    <router-link class="btn bg-orangish text-white w-full" to="/checkout">
+    <router-link class="btn bg-orangish text-center text-white w-full" to="/checkout">
       Checkout
     </router-link>
   </div>

@@ -17,7 +17,8 @@ export default {
         'light-orangish': '#FBAF85',
         'blackish': '#191919',
         'greyish': '#F1F1F1',
-        'light-greyish': '#FAFAFA'
+        'light-greyish': '#FAFAFA',
+        'red': '#CD2C2C'
       }
   },
   plugins: [],
